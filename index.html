@@ -260,64 +260,44 @@
             margin-bottom: 20px;
         }
 
-        /* ... (todo o seu código CSS anterior, como :root, body, header, etc.) ... */
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
 
-.about-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+        /* Fleet Simulation */
+        .fleet-section {
+            background-color: #f9f9f9;
+        }
 
-/* Fleet Simulation */
-.fleet-section {
-    background-color: #f9f9f9;
-}
+        .fleet-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-.fleet-controls {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+        .map-container {
+            height: 500px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px;
+        }
 
-.map-container {
-    height: 500px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 30px;
-}
-
-/*
- * É EXATAMENTE AQUI QUE VOCÊ VAI FAZER A MUDANÇA!
- * Encontre este bloco de código no seu arquivo e substitua a linha do 'background'.
- */
-.map-placeholder {
-    width: 100%;
-    height: 100%;
-    /* ANTES ESTAVA ASSIM: */
-    /* background: url('https://maps.googleapis.com/maps/api/staticmap?center=...' ) no-repeat center center/cover; */
-    
-    /* AGORA VAI FICAR ASSIM: */
-    background: url('mapa.png') no-repeat center center/cover;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark);
-    font-weight: 500;
-}
-
-.vehicle-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* ... (o resto do seu código CSS continua normalmente) ... */
-
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: url('https://maps.googleapis.com/maps/api/staticmap?center=-23.5505,-46.6333&zoom=12&size=1200x500&maptype=roadmap&key=YOUR_API_KEY') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 500;
+        }
 
         .vehicle-list {
             display: grid;
@@ -632,7 +612,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="https://via.placeholder.com/40x40" alt="SIT Logo">
+                    <img src="logo_sti.webp" alt="Logo STI - Sistemas Inteligentes de Transporte" style="height: 100px;">
                     <h1>SIT<span>Trans</span></h1>
                 </div>
                 <ul class="nav-links">
@@ -706,7 +686,7 @@
                     <a href="#fleet" class="btn">Ver Demonstração</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1601758003835-70f02b472d63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sistema de Transporte Inteligente">
+                    <img src="data:image/jpeg;base64,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">
                 </div>
             </div>
         </div>
@@ -735,11 +715,12 @@
                 </div>
             </div>
             
-            <div class="map-container">
-                <div class="map-placeholder">
-                    Mapa interativo com localização em tempo real dos veículos
+            <div class="about-image">
+                    <img src="https://brasilocal.com/images/m/mapa/sao-bernardo-do-campo.png">
                 </div>
             </div>
+        </div>
+    </section>
             
             <h3 style="margin-bottom: 20px; color: var(--primary-dark);">Status da Frota</h3>
             <div class="vehicle-list">
@@ -749,8 +730,8 @@
                         <span class="vehicle-status status-active">EM OPERAÇÃO</span>
                     </div>
                     <div class="vehicle-details">
-                        <p><strong>Linha:</strong> 101 - Centro/Bairro</p>
-                        <p><strong>Motorista:</strong> João Silva</p>
+                        <p><strong>Linha:</strong> 101 - Fatec/Centro/Bairro</p>
+                        <p><strong>Motorista:</strong> Emerson Avogado</p>
                         <p><strong>Última atualização:</strong> 2 minutos atrás</p>
                         <p><strong>Velocidade:</strong> 42 km/h</p>
                         <p><strong>Passageiros:</strong> 32/45</p>
@@ -797,6 +778,19 @@
                         <p><strong>Status:</strong> Aguardando liberação</p>
                     </div>
                 </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-header">
+                        <span class="vehicle-id">ÔNIBUS #RAJ-6Y00</span>
+                        <span class="vehicle-status status-active">EM OPERAÇÃO</span>
+                    </div>
+                    <div class="vehicle-details">
+                        <p><strong>Linha:</strong> 520 - São Bernardo/Diadema</p>
+                        <p><strong>Motorista:</strong> Raj Silva</p>
+                        <p><strong>Última atualização:</strong> 7 minutos atrás</p>
+                        <p><strong>Velocidade:</strong> 42 km/h</p>
+                        <p><strong>Passageiros:</strong> 32/45</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -834,12 +828,12 @@
             
             <div class="chart-container">
                 <h3 class="chart-title">Pontualidade por Linha (últimos 7 dias)</h3>
-                <canvas id="punctualityChart" height="300"></canvas>
+                <canvas id="punctualityChart" height="100"></canvas>
             </div>
             
             <div class="chart-container">
                 <h3 class="chart-title">Demanda por Horário (média diária)</h3>
-                <canvas id="demandChart" height="300"></canvas>
+                <canvas id="demandChart" height="100"></canvas>
             </div>
         </div>
     </section>
@@ -971,7 +965,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 SITTrans - Sistemas Inteligentes de Transporte. Todos os direitos reservados.</p>
+                <p>&copy; 2026 SITTrans - Sistemas Inteligentes de Transporte. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1109,4 +1103,17 @@
         setInterval(updateVehicleData, 10000);
     </script>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
