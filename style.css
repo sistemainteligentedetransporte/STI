@@ -12,6 +12,7 @@
 
 /* ====== BASE ====== */
 body {
+    background: #ffeeee !important;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--dark);
@@ -175,3 +176,4 @@ footer {
         max-height: 50px;
     }
 }
+
