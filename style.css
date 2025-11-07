@@ -12,50 +12,50 @@
 
 /* ====== BASE ====== */
 body {
-    background: #ffeeee !important;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--dark);
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    background-color: #fff;
 }
 
 /* ================================
-   CABEÇALHO (HEADER)
+   CABEÇALHO (HEADER) MODERNO E COMPACTO
    ================================ */
 
 header {
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    position: static;              /* não fica mais fixo */
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    position: static;
     width: 100%;
     z-index: 10;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* container interno do header */
+/* container interno enxuto */
 header > div {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 8px 32px;             /* altura menor do topo */
+    padding: 6px 32px;              /* altura menor */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 32px;
+    gap: 24px;
 }
 
-/* logo mais compacto */
+/* logo reduzido */
 header .logo img {
-    max-height: 60px;              /* ajuste da altura do logo */
+    max-height: 42px;               /* tamanho ideal */
     height: auto;
     width: auto;
 }
 
-/* título do logo (se houver texto) */
+/* título do logo (caso exista texto) */
 .logo h1 {
     color: var(--primary-dark);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin: 0;
 }
 
@@ -63,14 +63,14 @@ header .logo img {
     color: var(--secondary);
 }
 
-/* menu horizontal */
+/* menu moderno */
 header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
 }
 
 header nav ul li {
@@ -79,33 +79,40 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: var(--dark);
+    color: #263238;
     font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s ease, transform 0.2s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
+/* efeito hover com destaque */
 header nav ul li a:hover {
-    color: var(--primary);
+    color: #2e7d32;
+    border-color: #2e7d32;
     transform: translateY(-1px);
 }
 
+/* espaço após o header */
+section:first-of-type,
+main section:first-of-type {
+    margin-top: 16px;
+}
+
 /* ================================
-   SEÇÕES E CONTEÚDO
+   CONTEÚDO PRINCIPAL
    ================================ */
 
 main, section {
     margin: 0;
-    padding: 60px 20px; /* espaçamento interno padrão */
-}
-
-/* adiciona leve espaço inicial abaixo do header */
-section:first-of-type {
-    margin-top: 20px;
+    padding: 60px 20px;
 }
 
 /* ================================
-   BOTÕES E ELEMENTOS GERAIS
+   BOTÕES
    ================================ */
 
 button, .btn {
@@ -149,31 +156,4 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 10px;
-    font-size: 0.9rem;
-    margin-top: 40px;
-}
-
-/* ================================
-   AJUSTES RESPONSIVOS
-   ================================ */
-
-@media (max-width: 900px) {
-    header > div {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 8px;
-        padding: 12px 16px;
-    }
-
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    header .logo img {
-        max-height: 50px;
-    }
-}
-
+    f
