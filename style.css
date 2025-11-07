@@ -11,6 +11,12 @@
 }
 
 /* ====== BASE ====== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -18,41 +24,42 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background-color: #fff;
+    background-color: #000; /* fundo geral do hero escurecido */
 }
 
 /* ================================
-   CABEÇALHO (HEADER) MODERNO E COMPACTO
+   CABEÇALHO (HEADER) – COMPACTO E MODERNO
    ================================ */
 
 header {
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.97);
     box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-    border-bottom: 1px solid rgba(0,0,0,0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     position: static;
     width: 100%;
     z-index: 10;
 }
 
-/* container interno enxuto */
-header > div {
+/* barra de topo */
+.topbar {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 6px 32px;              /* altura menor */
+    padding: 6px 32px;           /* controla a altura da faixa branca */
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
 }
 
-/* logo reduzido */
-header .logo img {
-    max-height: 42px;               /* tamanho ideal */
+/* logo menor e alinhado */
+.logo img {
+    max-height: 38px;            /* ajuste principal de tamanho do header */
     height: auto;
     width: auto;
+    display: block;
 }
 
-/* título do logo (caso exista texto) */
+/* caso use texto junto com o logo */
 .logo h1 {
     color: var(--primary-dark);
     font-size: 1.1rem;
@@ -64,7 +71,7 @@ header .logo img {
 }
 
 /* menu moderno */
-header nav ul {
+.main-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -73,11 +80,11 @@ header nav ul {
     gap: 18px;
 }
 
-header nav ul li {
+.main-nav li {
     margin: 0;
 }
 
-header nav ul li a {
+.main-nav a {
     text-decoration: none;
     color: #263238;
     font-weight: 500;
@@ -90,25 +97,25 @@ header nav ul li a {
 }
 
 /* efeito hover com destaque */
-header nav ul li a:hover {
+.main-nav a:hover {
     color: #2e7d32;
     border-color: #2e7d32;
     transform: translateY(-1px);
 }
 
-/* espaço após o header */
-section:first-of-type,
-main section:first-of-type {
-    margin-top: 16px;
-}
-
 /* ================================
-   CONTEÚDO PRINCIPAL
+   CONTEÚDO PRINCIPAL (GENÉRICO)
    ================================ */
 
 main, section {
     margin: 0;
-    padding: 60px 20px;
+    padding: 40px 20px;
+}
+
+/* espaço depois do header e antes do primeiro bloco de conteúdo */
+section:first-of-type,
+main section:first-of-type {
+    margin-top: 16px;
 }
 
 /* ================================
@@ -156,4 +163,30 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 10px;
-    f
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* ================================
+   RESPONSIVIDADE
+   ================================ */
+
+@media (max-width: 900px) {
+    .topbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        padding: 10px 16px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .logo img {
+        max-height: 34px;
+    }
+}
