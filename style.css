@@ -15,10 +15,10 @@ body {
 header {
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: static;   /* ou simplesmente não usar 'position' */
+    /* position: fixed;  <-- REMOVER */
+    /* top: 0;           <-- pode remover também */
     width: 100%;
-    top: 0;
-    z-index: 1000;
+    z-index: 1000;      /* pode deixar, não atrapalha */
 }
 
 .logo h1 {
@@ -32,3 +32,4 @@ header {
 
 
 /* Estilos completos continuam... */
+
