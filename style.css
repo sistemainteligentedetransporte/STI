@@ -12,14 +12,54 @@ body {
     color: var(--dark);
 }
 
+/* ===== CABEÇALHO (HEADER) AJUSTADO ===== */
 header {
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: static;   /* posição normal, rola junto com o site */
+    position: static !important;   /* não fica mais fixo */
+    top: auto !important;
     width: 100%;
+    z-index: 1000;
+    padding: 10px 40px;            /* reduz altura geral */
 }
 
+/* diminui o tamanho do logo */
+header .logo img {
+    max-height: 70px;
+}
 
+/* deixa o espaço interno do header menor */
+header,
+header > div {
+    padding: 10px 40px;
+}
+
+/* ajusta o menu */
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--primary);
+}
+
+/* diminui altura geral do topo */
 .logo h1 {
     color: var(--primary-dark);
     font-size: 1.5rem;
@@ -29,7 +69,14 @@ header {
     color: var(--secondary);
 }
 
+/* ===== OUTROS AJUSTES GERAIS ===== */
 
-/* Estilos completos continuam... */
+/* adiciona pequeno espaçamento no início da página, caso o topo encoste demais */
+main, section {
+    margin-top: 20px;
+}
 
-
+/* opcional: se quiser o conteúdo começar bem logo abaixo do header */
+body {
+    scroll-behavior: smooth;
+}
