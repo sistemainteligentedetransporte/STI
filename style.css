@@ -11,12 +11,6 @@
 }
 
 /* ====== BASE ====== */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -24,42 +18,41 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background-color: #000; /* fundo geral do hero escurecido */
+    background-color: #fff;
 }
 
 /* ================================
-   CABEÇALHO (HEADER) – COMPACTO E MODERNO
+   CABEÇALHO (HEADER) MODERNO E COMPACTO
    ================================ */
 
 header {
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(255, 255, 255, 0.96);
     box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
     position: static;
     width: 100%;
     z-index: 10;
 }
 
-/* barra de topo */
-.topbar {
+/* container interno enxuto */
+header > div {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 6px 32px;           /* controla a altura da faixa branca */
+    padding: 6px 32px;              /* altura menor */
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
 }
 
-/* logo menor e alinhado */
-.logo img {
-    max-height: 38px;            /* ajuste principal de tamanho do header */
+/* logo reduzido */
+header .logo img {
+    max-height: 42px;               /* tamanho ideal */
     height: auto;
     width: auto;
-    display: block;
 }
 
-/* caso use texto junto com o logo */
+/* título do logo (caso exista texto) */
 .logo h1 {
     color: var(--primary-dark);
     font-size: 1.1rem;
@@ -71,7 +64,7 @@ header {
 }
 
 /* menu moderno */
-.main-nav ul {
+header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -80,11 +73,11 @@ header {
     gap: 18px;
 }
 
-.main-nav li {
+header nav ul li {
     margin: 0;
 }
 
-.main-nav a {
+header nav ul li a {
     text-decoration: none;
     color: #263238;
     font-weight: 500;
@@ -97,25 +90,25 @@ header {
 }
 
 /* efeito hover com destaque */
-.main-nav a:hover {
+header nav ul li a:hover {
     color: #2e7d32;
     border-color: #2e7d32;
     transform: translateY(-1px);
 }
 
+/* espaço após o header */
+section:first-of-type,
+main section:first-of-type {
+    margin-top: 16px;
+}
+
 /* ================================
-   CONTEÚDO PRINCIPAL (GENÉRICO)
+   CONTEÚDO PRINCIPAL
    ================================ */
 
 main, section {
     margin: 0;
-    padding: 40px 20px;
-}
-
-/* espaço depois do header e antes do primeiro bloco de conteúdo */
-section:first-of-type,
-main section:first-of-type {
-    margin-top: 16px;
+    padding: 60px 20px;
 }
 
 /* ================================
@@ -172,7 +165,7 @@ footer {
    ================================ */
 
 @media (max-width: 900px) {
-    .topbar {
+    header > div {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -180,13 +173,13 @@ footer {
         padding: 10px 16px;
     }
 
-    .main-nav ul {
+    header nav ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 12px;
     }
 
-    .logo img {
-        max-height: 34px;
+    header .logo img {
+        max-height: 38px;
     }
 }
